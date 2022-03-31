@@ -1,9 +1,12 @@
 import Card from "~/components/Card";
 import Button from "~/components/Button";
+import FlashMessage from "~/components/FlashMessage";
 
 export default function Dashboard() {
   return (
     <div className='container margin-top-md'>
+      <FlashMessage type='notice' message='You did a thing' />
+
       <div>
         <Button>Primary</Button>
         <Button color='secondary' className='margin-left-sm'>Secondary</Button>
