@@ -1,3 +1,4 @@
+import Card from "~/components/Card";
 import Button from "~/components/Button";
 
 export default function Dashboard() {
@@ -27,8 +28,39 @@ export default function Dashboard() {
         <Button active>Active</Button>
       </div>
       <div className='margin-top-md'>
-        <Button minMobileHeight={100}>Height</Button>
+        <Button minMobileHeight='100px'>Height</Button>
       </div>
+      <Card className='margin-top-md'>
+        <p>Just a card</p>
+      </Card>
+      <Card className='margin-top-md' padded>
+        <p>Padded card</p>
+      </Card>
+      <Card className='margin-top-md' padded cardPadding="var(--rms-space-large)">
+        <p>Extra Padded card</p>
+      </Card>
+      <Card
+        className='margin-top-md'
+        header={<h1>Header</h1>}
+        body={<p>Body</p>}
+        footer={<div>Footer</div>}
+      />
+      <Card
+        className='margin-top-md'
+        header={<h1>Header</h1>}
+        body={<p>Body</p>}
+        footer={<div>Footer</div>}
+        headerProps={{
+          className: 'background-primary-lighter',
+          role: 'example',
+        }}
+        bodyProps={{
+          className: 'background-primary-lightest'
+        }}
+        footerProps={{
+          className: 'background-primary-lighter'
+        }}
+      />
     </div>
   );
 }
