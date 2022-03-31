@@ -1,3 +1,5 @@
+import { MouseEventHandler } from "react";
+
 export type ButtonProps = {
   color?: ('primary' | 'secondary' | 'tertiary');
   size?: ('small' | 'medium' | 'large');
@@ -7,6 +9,7 @@ export type ButtonProps = {
   className?: string;
   children?: React.ReactNode;
   minMobileHeight?: string;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const DEFAULT_SIZE = 'medium';
@@ -20,6 +23,7 @@ export default function Button({
   className = '',
   minMobileHeight,
   children = null,
+  onClick,
   ...rest
 }: ButtonProps) {
   const outlineClass = outline ? 'btn--outline' : ''
@@ -36,6 +40,7 @@ export default function Button({
     <button
       style={cssVariablesOverride}
       className={`btn btn--${color} ${sizeClass} ${outlineClass} ${pillClass} ${activeClass} ${className}`}
+      onClick={onClick}
       {...rest}
     >
       {children}
