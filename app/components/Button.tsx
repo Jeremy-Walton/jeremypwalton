@@ -4,9 +4,9 @@ export type ButtonProps = {
   outline?: boolean;
   pill?: boolean;
   active?: boolean;
-  minMobileHeight?: number;
   className?: string;
   children?: React.ReactNode;
+  minMobileHeight?: string;
 }
 
 const DEFAULT_SIZE = 'medium';
@@ -19,7 +19,7 @@ export default function Button({
   active = false,
   className = '',
   minMobileHeight,
-  children,
+  children = null,
   ...rest
 }: ButtonProps) {
   const outlineClass = outline ? 'btn--outline' : ''
@@ -29,7 +29,7 @@ export default function Button({
 
   const cssVariablesOverride: any = {} as React.CSSProperties;
   if (minMobileHeight) {
-    cssVariablesOverride['--rms-mobile-min-height'] = `${minMobileHeight}px`
+    cssVariablesOverride['--rms-mobile-min-height'] = minMobileHeight
   }
 
   return (
