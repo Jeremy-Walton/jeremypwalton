@@ -39,9 +39,11 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body>
-        <Header />
-        <Outlet />
+      <body className="flex">
+        <main className="wrapper--main">
+          <Header />
+          <Outlet />
+        </main>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
